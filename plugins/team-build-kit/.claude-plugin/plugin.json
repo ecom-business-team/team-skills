@@ -1,0 +1,8 @@
+{
+  "name": "team-build-kit",
+  "version": "0.1.0",
+  "description": "The three-gate build lifecycle: memo -> prd -> build -> ship. Build tools you can trust without being an engineer.",
+  "author": {
+    "name": "Zachary Blake"
+  }
+}

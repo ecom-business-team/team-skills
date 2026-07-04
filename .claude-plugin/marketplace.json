@@ -1,0 +1,48 @@
+{
+  "name": "ecom-business-team",
+  "owner": {
+    "name": "Ecom Business Team",
+    "url": "https://github.com/ecom-business-team"
+  },
+  "metadata": {
+    "description": "Shared skills marketplace for the ecom-business team. Skills are organized by functional domain.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "general",
+      "source": "./plugins/general",
+      "description": "General-purpose skills recommended for everyone on the team. Includes contribute-skill and browse-skills for interacting with this marketplace without touching git.",
+      "version": "0.1.0",
+      "category": "general"
+    },
+    {
+      "name": "team-build-kit",
+      "source": "./plugins/team-build-kit",
+      "description": "The three-gate build lifecycle: memo (why) -> prd (what) -> build (how) -> ship (safe to rely on). For building tools you trust without being an engineer.",
+      "version": "0.1.0",
+      "category": "general"
+    },
+    {
+      "name": "copywriting",
+      "source": "./plugins/copywriting",
+      "description": "Skills for copywriters. (Placeholder - awaiting first contribution.)",
+      "version": "0.1.0",
+      "category": "domain"
+    },
+    {
+      "name": "creative-strategy",
+      "source": "./plugins/creative-strategy",
+      "description": "Skills for creative strategists. (Placeholder - awaiting first contribution.)",
+      "version": "0.1.0",
+      "category": "domain"
+    },
+    {
+      "name": "media-buying",
+      "source": "./plugins/media-buying",
+      "description": "Skills for media buyers. (Placeholder - awaiting first contribution.)",
+      "version": "0.1.0",
+      "category": "domain"
+    }
+  ]
+}
