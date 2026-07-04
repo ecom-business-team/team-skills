@@ -1,14 +1,14 @@
 # Skills Marketplace — System Context
 
-**What it is:** The `ecom-business-team/skills` GitHub repo. A Claude Code plugin marketplace that lets the whole team share, install, and improve skills from one central place. Every skill is production-quality (see [CONTRIBUTING.md](CONTRIBUTING.md)).
+**What it is:** The `ecom-business-team/team-skills` GitHub repo. A Claude Code plugin marketplace that lets the whole team share, install, and improve skills from one central place. Every skill is production-quality (see [CONTRIBUTING.md](CONTRIBUTING.md)).
 
-**Repo:** https://github.com/ecom-business-team/skills
+**Repo:** https://github.com/ecom-business-team/team-skills
 
 **Local clone:** this folder (`/Users/zacharyblake/Desktop/ClaudeCode/skills/`) is the working copy of the repo. Edits here + `git push` = published to the team.
 
 ## Purpose
 
-Solve the "how does the team share work across Claude Code" problem without inventing infrastructure. Uses Claude Code's native plugin/marketplace mechanism plus standard GitHub PR flow. Two custom skills (`/git-add`, `/git-browse`) hide git and the `/plugins` command surface so non-technical teammates never need to learn either.
+Solve the "how does the team share work across Claude Code" problem without inventing infrastructure. Uses Claude Code's native plugin/marketplace mechanism plus standard GitHub PR flow. Two custom skills (`/team-skills-add`, `/team-skills-browse`) hide git and the `/plugins` command surface so non-technical teammates never need to learn either.
 
 ## What lives here
 
@@ -20,7 +20,7 @@ Solve the "how does the team share work across Claude Code" problem without inve
 | `LIBRARY.md` | Enumerated list of every plugin and skill with descriptions | Living — regenerate when skills are added/removed |
 | `flow.html` | Interactive diagram of the publish + install flow (team-visible) | Living — update when the mechanism changes |
 | `.claude-plugin/marketplace.json` | The manifest Claude Code reads when adding this marketplace | Living |
-| `plugins/general/` | Skills recommended for everyone (`new-workflow`, `onboard`, `git-add`, `git-browse`) | Living |
+| `plugins/general/` | Skills recommended for everyone (`new-workflow`, `onboard`, `team-skills-add`, `team-skills-browse`) | Living |
 | `plugins/team-build-kit/` | The `/memo -> /prd -> /build -> /ship` lifecycle | Living |
 | `plugins/copywriting/` | Copywriter skills — placeholder pending first contribution | Living |
 | `plugins/creative-strategy/` | Creative strategist skills — placeholder pending first contribution | Living |
@@ -32,7 +32,7 @@ Solve the "how does the team share work across Claude Code" problem without inve
 |---|---|
 | "What plugins exist and what's in them?" | [LIBRARY.md](LIBRARY.md) |
 | "How does a teammate install this?" | [README.md](README.md) — 3 commands |
-| "How does a teammate submit a skill?" | [CONTRIBUTING.md](CONTRIBUTING.md) + `/git-add` |
+| "How does a teammate submit a skill?" | [CONTRIBUTING.md](CONTRIBUTING.md) + `/team-skills-add` |
 | "How does the whole system work end-to-end?" | [flow.html](flow.html) — visual diagram |
 | "Who owns each plugin?" | Each plugin's own `README.md` |
 | "What's the source of truth for what's live?" | `.claude-plugin/marketplace.json` on `main` |
@@ -58,8 +58,8 @@ Solve the "how does the team share work across Claude Code" problem without inve
 
 The whole point of this system is that **teammates never touch git or memorize `/plugins` commands.** Two skills carry that promise:
 
-- **`/git-add`** — teammate says "I want to share this skill." Skill runs the CONTRIBUTING checklist against the skill, forks the repo, branches, commits, opens the PR. Teammate sees a PR URL and confirmation.
-- **`/git-browse`** — teammate says "what's available?" Skill fetches the marketplace catalog live from GitHub, presents plugins + skills with descriptions, installs what's picked.
+- **`/team-skills-add`** — teammate says "I want to share this skill." Skill runs the CONTRIBUTING checklist against the skill, forks the repo, branches, commits, opens the PR. Teammate sees a PR URL and confirmation.
+- **`/team-skills-browse`** — teammate says "what's available?" Skill fetches the marketplace catalog live from GitHub, presents plugins + skills with descriptions, installs what's picked.
 
 Both live in `general` so every teammate has them from day one.
 

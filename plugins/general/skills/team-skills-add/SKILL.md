@@ -1,20 +1,20 @@
 ---
-name: git-add
+name: team-skills-add
 description: Add a skill from your local ~/.claude/skills/ to the ecom-business-team skills marketplace. Runs the quality checklist, then forks + branches + commits + opens a pull request on your behalf, and updates LIBRARY.md with the new entry. You never touch git. Use this when you've built a skill that would be useful to the team.
 ---
 
-# /git-add
+# /team-skills-add
 
-**Purpose:** Take a skill the user has built locally, verify it meets the marketplace's shipped-quality bar, and get it into a pull request against `ecom-business-team/skills`. The user never touches git.
+**Purpose:** Take a skill the user has built locally, verify it meets the marketplace's shipped-quality bar, and get it into a pull request against `ecom-business-team/team-skills`. The user never touches git.
 
-**Marketplace repo:** `https://github.com/ecom-business-team/skills`
+**Marketplace repo:** `https://github.com/ecom-business-team/team-skills`
 
 ## Prerequisites
 
 - `gh` CLI installed and authenticated (`gh auth status` should show a logged-in account)
 - The skill exists locally at `~/.claude/skills/<skill-name>/SKILL.md`
 
-If `gh` is not installed, stop and tell the user: *"You need the GitHub CLI to submit a skill. Install with `brew install gh`, then run `gh auth login`, then re-run `/git-add`."*
+If `gh` is not installed, stop and tell the user: *"You need the GitHub CLI to submit a skill. Install with `brew install gh`, then run `gh auth login`, then re-run `/team-skills-add`."*
 
 ## Flow
 
@@ -35,14 +35,14 @@ Silently check each item. Report any failures back to the user before proceeding
 - [ ] **No hardcoded workspace IDs** — grep for likely ClickUp list IDs (long numeric strings 9+ digits), n8n workflow IDs (patterns like `[A-Za-z0-9]{16}`), Supabase keys. If found, ask the user whether these are intended to be shared or should be parameterized.
 - [ ] **Has at least one usage example** — the skill body mentions an example prompt or scenario
 
-If any check fails, print the specific issue and stop. The user fixes it locally, then re-runs `/git-add`.
+If any check fails, print the specific issue and stop. The user fixes it locally, then re-runs `/team-skills-add`.
 
 ### Step 3 — Pick the plugin
 
 Fetch the current marketplace manifest from GitHub:
 
 ```
-curl -sL https://raw.githubusercontent.com/ecom-business-team/skills/main/.claude-plugin/marketplace.json
+curl -sL https://raw.githubusercontent.com/ecom-business-team/team-skills/main/.claude-plugin/marketplace.json
 ```
 
 Present the list of plugins (`general`, `team-build-kit`, `copywriting`, `creative-strategy`, `media-buying`, ...) with their descriptions. Ask which one the skill belongs in.
@@ -55,14 +55,14 @@ Do this without asking the user for git commands. Show what you're doing but don
 
 ```bash
 # Check if user has a fork; create if not
-gh repo fork ecom-business-team/skills --clone=false --remote=false 2>&1 || true
+gh repo fork ecom-business-team/team-skills --clone=false --remote=false 2>&1 || true
 
 # Work in a temp directory
 WORKDIR=$(mktemp -d)
 cd "$WORKDIR"
 gh repo clone "$(gh api user --jq .login)/skills" -- --depth=1
 cd skills
-git remote add upstream https://github.com/ecom-business-team/skills.git
+git remote add upstream https://github.com/ecom-business-team/team-skills.git
 git fetch upstream main
 git checkout -b add-<skill-name> upstream/main
 
@@ -83,7 +83,7 @@ git commit -m "Add <skill-name> to <plugin>"
 git push origin add-<skill-name>
 
 # Open PR
-gh pr create --repo ecom-business-team/skills \
+gh pr create --repo ecom-business-team/team-skills \
   --title "Add <skill-name> to <plugin>" \
   --body "Adds \`<skill-name>\` to the \`<plugin>\` plugin.
 
@@ -94,7 +94,7 @@ gh pr create --repo ecom-business-team/skills \
 - No secrets or personal paths
 - Has been used for real work at least once
 
-Contributed via \`/git-add\`."
+Contributed via \`/team-skills-add\`."
 ```
 
 ### Step 5 — Report

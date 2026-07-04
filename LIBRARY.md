@@ -1,23 +1,23 @@
 # Skills Library
 
-Every plugin and skill available in the ecom-business-team marketplace. **Automatically updated by `/git-add`** on every skill submission — you should never need to edit this file by hand.
+Every plugin and skill available in the ecom-business-team marketplace. **Automatically updated by `/team-skills-add`** on every skill submission — you should never need to edit this file by hand.
 
-> **How to install:** `/plugins install <plugin-name>` in Claude Code, after adding this marketplace (`/plugins marketplace add ecom-business-team/skills`).
+> **How to install:** `/plugins install <plugin-name>` in Claude Code, after adding this marketplace (`/plugins marketplace add ecom-business-team/team-skills`).
 >
-> **Easier way:** Run `/git-browse` — it does the discovery + install for you.
+> **Easier way:** Run `/team-skills-browse` — it does the discovery + install for you.
 
 ---
 
 ## Map
 
 ```
-ecom-business-team/skills
+ecom-business-team/team-skills
 │
 ├── general                 (everyone) — Zachary Blake
 │   ├── /new-workflow
 │   ├── /onboard
-│   ├── /git-add
-│   └── /git-browse
+│   ├── /team-skills-add
+│   └── /team-skills-browse
 │
 ├── team-build-kit          (everyone) — Zachary Blake
 │   ├── /new-workspace
@@ -50,8 +50,8 @@ ecom-business-team/skills
 |---|---|
 | `/new-workflow` | Turn a repeat process into a reusable skill through a guided interview. The daily driver for building your own skill library. |
 | `/onboard` | First-run skill for someone new to Claude Code. Interviews the user about their work, scaffolds a personalized workspace with CLAUDE.md, CONTEXT.md files, and visual folder maps. |
-| `/git-add` | Submit a skill from your local `~/.claude/skills/` to this marketplace. Runs the quality checklist, forks + branches + commits + opens a PR on your behalf. You never touch git. |
-| `/git-browse` | Browse and install skills from this marketplace without knowing plugin commands. Shows what's available across all plugins, lets you pick, and installs. |
+| `/team-skills-add` | Submit a skill from your local `~/.claude/skills/` to this marketplace. Runs the quality checklist, forks + branches + commits + opens a PR on your behalf. You never touch git. |
+| `/team-skills-browse` | Browse and install skills from this marketplace without knowing plugin commands. Shows what's available across all plugins, lets you pick, and installs. |
 
 ---
 
@@ -76,7 +76,7 @@ ecom-business-team/skills
 
 **Owner:** TBD
 **Install:** `/plugins install copywriting`
-**Status:** Placeholder — awaiting first contribution. Be the first to run `/git-add` and submit something.
+**Status:** Placeholder — awaiting first contribution. Be the first to run `/team-skills-add` and submit something.
 
 ---
 
