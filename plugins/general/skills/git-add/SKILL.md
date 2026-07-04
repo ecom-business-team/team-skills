@@ -1,9 +1,9 @@
 ---
-name: contribute-skill
-description: Submit a skill from your local ~/.claude/skills/ to the ecom-business-team skills marketplace. Runs the quality checklist, then forks + branches + commits + opens a pull request on your behalf. You never touch git. Use this when you've built a skill that would be useful to the team.
+name: git-add
+description: Add a skill from your local ~/.claude/skills/ to the ecom-business-team skills marketplace. Runs the quality checklist, then forks + branches + commits + opens a pull request on your behalf, and updates LIBRARY.md with the new entry. You never touch git. Use this when you've built a skill that would be useful to the team.
 ---
 
-# /contribute-skill
+# /git-add
 
 **Purpose:** Take a skill the user has built locally, verify it meets the marketplace's shipped-quality bar, and get it into a pull request against `ecom-business-team/skills`. The user never touches git.
 
@@ -14,7 +14,7 @@ description: Submit a skill from your local ~/.claude/skills/ to the ecom-busine
 - `gh` CLI installed and authenticated (`gh auth status` should show a logged-in account)
 - The skill exists locally at `~/.claude/skills/<skill-name>/SKILL.md`
 
-If `gh` is not installed, stop and tell the user: *"You need the GitHub CLI to submit a skill. Install with `brew install gh`, then run `gh auth login`, then re-run `/contribute-skill`."*
+If `gh` is not installed, stop and tell the user: *"You need the GitHub CLI to submit a skill. Install with `brew install gh`, then run `gh auth login`, then re-run `/git-add`."*
 
 ## Flow
 
@@ -35,7 +35,7 @@ Silently check each item. Report any failures back to the user before proceeding
 - [ ] **No hardcoded workspace IDs** — grep for likely ClickUp list IDs (long numeric strings 9+ digits), n8n workflow IDs (patterns like `[A-Za-z0-9]{16}`), Supabase keys. If found, ask the user whether these are intended to be shared or should be parameterized.
 - [ ] **Has at least one usage example** — the skill body mentions an example prompt or scenario
 
-If any check fails, print the specific issue and stop. The user fixes it locally, then re-runs `/contribute-skill`.
+If any check fails, print the specific issue and stop. The user fixes it locally, then re-runs `/git-add`.
 
 ### Step 3 — Pick the plugin
 
@@ -70,8 +70,15 @@ git checkout -b add-<skill-name> upstream/main
 mkdir -p plugins/<plugin>/skills/<skill-name>
 cp -R ~/.claude/skills/<skill-name>/* plugins/<plugin>/skills/<skill-name>/
 
-# Commit and push
-git add plugins/<plugin>/skills/<skill-name>
+# Update LIBRARY.md — add a row under the target plugin's table
+# Read LIBRARY.md, find the "## `<plugin>`" section, insert a new
+# `| /<skill-name> | <one-line description from frontmatter> |` row at
+# the end of that plugin's command table. If the plugin doesn't have a
+# table yet (placeholder), replace the "Status: Placeholder" line with a
+# fresh command table containing this skill as the first entry.
+
+# Commit and push (skill + LIBRARY.md update in one commit)
+git add plugins/<plugin>/skills/<skill-name> LIBRARY.md
 git commit -m "Add <skill-name> to <plugin>"
 git push origin add-<skill-name>
 
@@ -87,7 +94,7 @@ gh pr create --repo ecom-business-team/skills \
 - No secrets or personal paths
 - Has been used for real work at least once
 
-Contributed via \`/contribute-skill\`."
+Contributed via \`/git-add\`."
 ```
 
 ### Step 5 — Report

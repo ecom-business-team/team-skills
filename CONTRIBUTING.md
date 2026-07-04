@@ -4,7 +4,7 @@ The bar for this marketplace is high on purpose: **every skill here is productio
 
 ## The standard
 
-A skill can be merged into this marketplace when it clears every item on this checklist. The `/contribute-skill` command walks you through it — you don't need to check them manually.
+A skill can be merged into this marketplace when it clears every item on this checklist. The `/git-add` command walks you through it — you don't need to check them manually.
 
 - [ ] **Clear one-line description** in the skill's frontmatter that tells another teammate *when to invoke it*, not just what it does.
 - [ ] **Runs end-to-end on a fresh machine.** No hardcoded paths to `/Users/yourname/...`. No assumed local files that only exist on your Mac.
@@ -22,7 +22,7 @@ Skills that are half-built, personal experiments, or workspace-specific don't be
 
 ## The submission flow (for non-technical teammates)
 
-You do not need to know git. Use `/contribute-skill` in Claude Code:
+You do not need to know git. Use `/git-add` in Claude Code:
 
 1. It asks which skill you want to submit.
 2. It runs the checklist above and flags anything missing so you can fix it first.

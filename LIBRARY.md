@@ -1,10 +1,43 @@
 # Skills Library
 
-Every plugin and skill available in the ecom-business-team marketplace. Regenerate when skills are added or removed.
+Every plugin and skill available in the ecom-business-team marketplace. **Automatically updated by `/git-add`** on every skill submission — you should never need to edit this file by hand.
 
 > **How to install:** `/plugins install <plugin-name>` in Claude Code, after adding this marketplace (`/plugins marketplace add ecom-business-team/skills`).
 >
-> **Easier way:** Run `/browse-skills` — it does the discovery + install for you.
+> **Easier way:** Run `/git-browse` — it does the discovery + install for you.
+
+---
+
+## Map
+
+```
+ecom-business-team/skills
+│
+├── general                 (everyone) — Zachary Blake
+│   ├── /new-workflow
+│   ├── /onboard
+│   ├── /git-add
+│   └── /git-browse
+│
+├── team-build-kit          (everyone) — Zachary Blake
+│   ├── /new-workspace
+│   ├── /memo
+│   ├── /prd
+│   ├── /build
+│   ├── /ship
+│   └── /quick-fix
+│
+├── copywriting             (copywriters) — owner TBD
+│   └── (empty — awaiting first contribution)
+│
+├── creative-strategy       (strategists) — owner TBD
+│   └── (empty — awaiting first contribution)
+│
+└── media-buying            (buyers) — owner TBD
+    └── (empty — awaiting first contribution)
+```
+
+**Reading the map:** each plugin is one install (`/plugins install <name>`). Skills are the individual commands you type in Claude Code. Everyone installs `general` + `team-build-kit`; the domain plugins are optional by role.
 
 ---
 
@@ -17,8 +50,8 @@ Every plugin and skill available in the ecom-business-team marketplace. Regenera
 |---|---|
 | `/new-workflow` | Turn a repeat process into a reusable skill through a guided interview. The daily driver for building your own skill library. |
 | `/onboard` | First-run skill for someone new to Claude Code. Interviews the user about their work, scaffolds a personalized workspace with CLAUDE.md, CONTEXT.md files, and visual folder maps. |
-| `/contribute-skill` | Submit a skill from your local `~/.claude/skills/` to this marketplace. Runs the quality checklist, forks + branches + commits + opens a PR on your behalf. You never touch git. |
-| `/browse-skills` | Browse and install skills from this marketplace without knowing plugin commands. Shows what's available across all plugins, lets you pick, and installs. |
+| `/git-add` | Submit a skill from your local `~/.claude/skills/` to this marketplace. Runs the quality checklist, forks + branches + commits + opens a PR on your behalf. You never touch git. |
+| `/git-browse` | Browse and install skills from this marketplace without knowing plugin commands. Shows what's available across all plugins, lets you pick, and installs. |
 
 ---
 
@@ -43,7 +76,7 @@ Every plugin and skill available in the ecom-business-team marketplace. Regenera
 
 **Owner:** TBD
 **Install:** `/plugins install copywriting`
-**Status:** Placeholder — awaiting first contribution. Be the first to run `/contribute-skill` and submit something.
+**Status:** Placeholder — awaiting first contribution. Be the first to run `/git-add` and submit something.
 
 ---
 

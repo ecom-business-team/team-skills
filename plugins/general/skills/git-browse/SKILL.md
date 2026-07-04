@@ -1,9 +1,9 @@
 ---
-name: browse-skills
+name: git-browse
 description: Browse and install skills from the ecom-business-team marketplace without needing to know plugin commands or GitHub. Shows what plugins and individual skills are available, lets the user pick, and installs. Use when the user asks "what skills are available", "what can I install", or "show me what the team has built".
 ---
 
-# /browse-skills
+# /git-browse
 
 **Purpose:** Give the user a friendly, interactive way to discover and install skills from the ecom-business-team marketplace. Hide the `/plugins` command surface — the user shouldn't need to know it exists.
 
@@ -37,7 +37,7 @@ Show plugins grouped by category (`general` first, then `domain` plugins). Forma
 
 ```
 GENERAL — recommended for everyone
-  ✓ general           General-purpose skills (new-workflow, onboard, contribute-skill, browse-skills)
+  ✓ general           General-purpose skills (new-workflow, onboard, git-add, git-browse)
   ✓ team-build-kit    The memo -> prd -> build -> ship lifecycle
 
 DOMAIN — pick your role
@@ -74,7 +74,7 @@ Confirm each install worked. If a plugin fails (network, permission), print the 
 Tell the user:
 - *"Installed: `<list>`. These skills are available in every Claude Code session from now on."*
 - *"To get the latest versions in the future, run `/plugins marketplace update`."*
-- *"To browse again, run `/browse-skills`."*
+- *"To browse again, run `/git-browse`."*
 
 ## Design notes for future maintainers of this skill
 

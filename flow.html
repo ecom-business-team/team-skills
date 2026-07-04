@@ -122,7 +122,7 @@
 
 <div class="decision">
   <div class="decision-label">Resolved</div>
-  <b>Contribution model:</b> PR-only against <code>main</code>, 1 approval required. Non-technical teammates use <code>/contribute-skill</code> which wraps fork + branch + commit + PR — they never touch git.
+  <b>Contribution model:</b> PR-only against <code>main</code>, 1 approval required. Non-technical teammates use <code>/git-add</code> which wraps fork + branch + commit + PR — they never touch git.
 </div>
 
 <div class="decision open">
@@ -135,10 +135,10 @@
 
   <div class="node teammate" onclick="this.classList.toggle('open')">
     <div class="node-title">1. Teammate asks "what's available?"</div>
-    <div class="node-summary">Runs <code>/browse-skills</code> in Claude Code</div>
+    <div class="node-summary">Runs <code>/git-browse</code> in Claude Code</div>
     <div class="node-detail">
       <div class="prop"><span class="prop-key">Trigger</span><span>Teammate wants to discover or install skills</span></div>
-      <div class="prop"><span class="prop-key">Action</span><span>Invokes <code>/browse-skills</code></span></div>
+      <div class="prop"><span class="prop-key">Action</span><span>Invokes <code>/git-browse</code></span></div>
       <div class="prop"><span class="prop-key">Owner</span><span>Teammate</span></div>
       <div class="prop"><span class="prop-key">System</span><span>Claude Code</span></div>
       <div class="prop"><span class="prop-key">Output</span><span>Skill fetches live marketplace catalog from GitHub</span></div>
@@ -150,7 +150,7 @@
     <div class="node-title">2. Catalog rendered</div>
     <div class="node-summary">Plugins + individual skills with one-line descriptions</div>
     <div class="node-detail">
-      <div class="prop"><span class="prop-key">Trigger</span><span>/browse-skills invocation</span></div>
+      <div class="prop"><span class="prop-key">Trigger</span><span>/git-browse invocation</span></div>
       <div class="prop"><span class="prop-key">Action</span><span>Fetches <code>marketplace.json</code> + skill frontmatter from GitHub raw URLs</span></div>
       <div class="prop"><span class="prop-key">Owner</span><span>System</span></div>
       <div class="prop"><span class="prop-key">System</span><span>Claude Code + GitHub</span></div>
@@ -208,7 +208,7 @@
     <div class="node-summary">Lives in their local <code>~/.claude/skills/</code></div>
     <div class="node-detail">
       <div class="prop"><span class="prop-key">Trigger</span><span>Teammate built something and used it for real work</span></div>
-      <div class="prop"><span class="prop-key">Action</span><span>Runs <code>/contribute-skill</code></span></div>
+      <div class="prop"><span class="prop-key">Action</span><span>Runs <code>/git-add</code></span></div>
       <div class="prop"><span class="prop-key">Owner</span><span>Teammate</span></div>
       <div class="prop"><span class="prop-key">System</span><span>Claude Code</span></div>
       <div class="prop"><span class="prop-key">Output</span><span>Names the skill they want to submit</span></div>
@@ -289,9 +289,9 @@
   <div class="review-item">
     <div class="review-q">What breaks?</div>
     <div class="review-a">
-      <b>Checklist too strict:</b> teammate can't get through the fork/branch flow and gives up. Mitigation: <code>/contribute-skill</code> tells them the exact fix and lets them re-run.<br>
+      <b>Checklist too strict:</b> teammate can't get through the fork/branch flow and gives up. Mitigation: <code>/git-add</code> tells them the exact fix and lets them re-run.<br>
       <b>Silent merge conflict:</b> two teammates submit the same skill name. Mitigation: PR review catches it before merge.<br>
-      <b>Stale local clone:</b> teammate installs before <code>/plugins marketplace update</code>. Mitigation: <code>/browse-skills</code> always fetches live from GitHub, so the catalog is never stale.
+      <b>Stale local clone:</b> teammate installs before <code>/plugins marketplace update</code>. Mitigation: <code>/git-browse</code> always fetches live from GitHub, so the catalog is never stale.
     </div>
   </div>
 
@@ -299,7 +299,7 @@
     <div class="review-q">Who knows?</div>
     <div class="review-a">
       <b>PR opened:</b> plugin owner (GitHub notification). If no owner assigned yet, PR sits — need to check the "assign owners" open decision.<br>
-      <b>Skill fails checklist:</b> teammate sees it immediately in <code>/contribute-skill</code>.<br>
+      <b>Skill fails checklist:</b> teammate sees it immediately in <code>/git-add</code>.<br>
       <b>Skill breaks after merge:</b> next teammate to install it will report — no automated regression testing yet (accepted risk given scope).
     </div>
   </div>
@@ -307,8 +307,8 @@
   <div class="review-item">
     <div class="review-q">What's the fallback?</div>
     <div class="review-a">
-      <b>Skill installation fails:</b> teammate can manually run <code>/plugins install &lt;name&gt;</code> — <code>/browse-skills</code> is a convenience layer, not a dependency.<br>
-      <b>Skill submission fails:</b> teammate can open a PR by hand through GitHub UI — <code>/contribute-skill</code> is a convenience wrapper over standard git.<br>
+      <b>Skill installation fails:</b> teammate can manually run <code>/plugins install &lt;name&gt;</code> — <code>/git-browse</code> is a convenience layer, not a dependency.<br>
+      <b>Skill submission fails:</b> teammate can open a PR by hand through GitHub UI — <code>/git-add</code> is a convenience wrapper over standard git.<br>
       <b>Bad skill merged:</b> revert PR + <code>/plugins marketplace update</code> propagates the removal.
     </div>
   </div>

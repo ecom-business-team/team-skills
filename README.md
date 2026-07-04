@@ -41,7 +41,7 @@ Anything you have installed gets refreshed. Nothing else changes.
 Don't want to memorize commands. Instead:
 
 ```
-/browse-skills
+/git-browse
 ```
 
 Interactively browse what's available across all domains and install what looks useful. (Installed as part of `general`.)
@@ -51,7 +51,7 @@ Interactively browse what's available across all domains and install what looks 
 Built something useful in Claude Code and want to share it with the team?
 
 ```
-/contribute-skill
+/git-add
 ```
 
 Walks you through the quality checklist, runs the checks, and opens a pull request against this repo on your behalf. You never touch git. (Installed as part of `general`.)
@@ -60,7 +60,7 @@ Walks you through the quality checklist, runs the checks, and opens a pull reque
 
 | Plugin | Who | What's inside |
 |---|---|---|
-| `general` | Everyone | `new-workflow`, `onboard`, `contribute-skill`, `browse-skills` |
+| `general` | Everyone | `new-workflow`, `onboard`, `git-add`, `git-browse` |
 | `team-build-kit` | Everyone | `memo` -> `prd` -> `build` -> `ship` lifecycle for building tools you can trust |
 | `copywriting` | Copywriters | *(placeholder — awaiting first contribution)* |
 | `creative-strategy` | Strategists | *(placeholder — awaiting first contribution)* |

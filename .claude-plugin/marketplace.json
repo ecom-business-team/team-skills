@@ -12,7 +12,7 @@
     {
       "name": "general",
       "source": "./plugins/general",
-      "description": "General-purpose skills recommended for everyone on the team. Includes contribute-skill and browse-skills for interacting with this marketplace without touching git.",
+      "description": "General-purpose skills recommended for everyone on the team. Includes git-add and git-browse for interacting with this marketplace without touching git.",
       "version": "0.1.0",
       "category": "general"
     },
