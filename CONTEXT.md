@@ -76,7 +76,14 @@ Points down (sub-areas):
 
 Points up (cross-workspace):
 - Root [CLAUDE.md](../CLAUDE.md) routing table (this system is registered there)
-- The `team-build-kit/` folder at the workspace root is the **source** for the `team-build-kit` plugin content; if that folder is updated, propagate the change into `plugins/team-build-kit/skills/`
+- **`zjamesblake/team-build-kit` (public repo) is the source of truth for team-build-kit skill content.** It stays public because YouTube videos link to it. The workspace-root `team-build-kit/` folder is its working copy. `plugins/team-build-kit/skills/` in this marketplace is a **downstream mirror** for team distribution — after editing skills in the public repo, propagate here with:
+
+  ```bash
+  rsync -a --delete ~/Desktop/ClaudeCode/team-build-kit/.skills/{build,memo,prd,ship,quick-fix,new-workspace}/ \
+    ~/Desktop/ClaudeCode/team-skills/plugins/team-build-kit/skills/
+  ```
+
+  Then commit + push the marketplace. Do **not** edit `plugins/team-build-kit/skills/` directly — changes there won't reach the public repo.
 
 ## Don't Load (for this system)
 
