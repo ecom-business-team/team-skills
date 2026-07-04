@@ -4,7 +4,7 @@
 
 **Repo:** https://github.com/ecom-business-team/team-skills
 
-**Local clone:** this folder (`/Users/zacharyblake/Desktop/ClaudeCode/skills/`) is the working copy of the repo. Edits here + `git push` = published to the team.
+**Local clone:** this folder (`/Users/zacharyblake/Desktop/ClaudeCode/team-skills/`) is the working copy of the repo. Edits here + `git push` = published to the team.
 
 ## Purpose
 
