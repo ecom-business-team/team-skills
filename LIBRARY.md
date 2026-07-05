@@ -32,7 +32,9 @@ ecom-business-team/team-skills
 │   └── (empty — awaiting first contribution)
 │
 ├── creative-strategy       (strategists) — owner TBD
-│   └── (empty — awaiting first contribution)
+│   ├── /brief-iteration
+│   ├── /strategic-breakdown
+│   └── /hemingway-check
 │
 └── media-buying            (buyers) — owner TBD
     └── (empty — awaiting first contribution)
@@ -82,7 +84,12 @@ ecom-business-team/team-skills
 ## `creative-strategy` — for creative strategists
 
 **Owner:** TBD
-**Status:** Placeholder — awaiting first contribution.
+
+| Command | What it does |
+|---|---|
+| `/brief-iteration` | Adapt a top-performing ad script to a new format/trend. Outputs hook options, hold, and CTA. Use when iterating a winning batch into a new creative format. |
+| `/strategic-breakdown` | Full psychological breakdown of a brief or script using the Elite Video Ad framework — Schwartz awareness, belief ladder, identity, curiosity gaps. Use for weekly QA and reverse-engineering winners. |
+| `/hemingway-check` | Hemingway-style readability check on scripts or copy — flags hard sentences, passive voice, adverbs, and weak qualifiers; targets Grade 6. Use before finalizing any script or hook. |
 
 ---
 
