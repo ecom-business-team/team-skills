@@ -1,0 +1,8 @@
+{
+  "name": "clickup-operations",
+  "version": "0.1.0",
+  "description": "Skills for operating the team's shared ClickUp workspace (Ads Board, Client Catalogs, brief workflows). Ships with baked-in shared-workspace IDs so the whole team can use them.",
+  "author": {
+    "name": "Ecom Business Team"
+  }
+}

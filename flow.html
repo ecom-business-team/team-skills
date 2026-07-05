@@ -149,8 +149,22 @@
 <p class="subtitle">A shared library of Claude Code skills for the team. No terminal required. Works in the VSCode extension.</p>
 
 <div class="start-here">
-  <h2>Start Here — First-time setup</h2>
-  <p>You need Claude Code installed (VSCode extension is fine). Then two steps:</p>
+  <h2>Start Here</h2>
+
+  <p style="margin-top: 1rem; font-weight: 600;">Before you begin — prerequisites</p>
+  <p style="margin: 0.25rem 0 0.5rem;"><i>To install skills (everyone):</i></p>
+  <ul style="margin: 0 0 0.75rem; padding-left: 1.25rem;">
+    <li>Claude Code installed (the VSCode extension is fine — download it inside VSCode from the Extensions panel)</li>
+    <li>Internet access</li>
+  </ul>
+  <p style="margin: 0.25rem 0 0.5rem;"><i>To also contribute skills back (only if you plan to share what you build):</i></p>
+  <ul style="margin: 0 0 1rem; padding-left: 1.25rem;">
+    <li>A free GitHub account — sign up at <a href="https://github.com/signup" style="color: var(--teal);">github.com/signup</a></li>
+    <li>Membership in the <code>ecom-business-team</code> GitHub org — send Zak your GitHub username and he'll add you</li>
+    <li>GitHub CLI installed and authenticated — see the "Setting up GitHub CLI" section below (one-time, ~2 minutes)</li>
+  </ul>
+
+  <p style="margin-top: 1rem; font-weight: 600;">First-time setup — two steps</p>
   <ol>
     <li>Open a Claude Code chat. Paste the prompt below <b>exactly as-is</b> and send it. Claude will do the file setup for you (about 15 seconds).</li>
     <li>When Claude confirms it's done, <b>close the Claude Code chat and open a new one</b>. Then type <code>/team-skills-browse</code> to install the plugin for your role.</li>
@@ -162,6 +176,16 @@
     <li><code>/team-skills-update</code> — refresh every team-skill you have to the latest version</li>
     <li><code>/team-skills-add</code> — share a skill you built with the team (opens a pull request for you)</li>
   </ol>
+
+  <p style="margin-top: 1.5rem; font-weight: 600;">Setting up GitHub CLI (only if you plan to contribute)</p>
+  <p style="margin: 0.25rem 0 0.5rem;">If you don't plan to use <code>/team-skills-add</code>, skip this. Otherwise:</p>
+  <ol>
+    <li>Open the built-in terminal in VSCode (<b>View → Terminal</b>, or press <code>Ctrl+`</code> / <code>Cmd+`</code>).</li>
+    <li>If you don't have Homebrew: paste <code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code> and follow the prompts.</li>
+    <li>Install the GitHub CLI: <code>brew install gh</code></li>
+    <li>Log in: <code>gh auth login</code> — pick <b>GitHub.com</b>, then <b>HTTPS</b>, then <b>Login with a web browser</b>. Copy the one-time code it shows you, open the URL, paste the code, and authorize.</li>
+  </ol>
+  <p style="margin: 0.5rem 0 0; color: var(--muted); font-size: 0.9rem;">That's the only time you'll need the terminal for this system. After this, <code>/team-skills-add</code> handles all git operations for you.</p>
 </div>
 
 <h2>How it works — the flow</h2>
@@ -184,9 +208,9 @@
   <b>Contribution model:</b> PR-only against <code>main</code>, 1 approval required. Non-technical teammates use <code>/team-skills-add</code> which wraps fork + branch + commit + PR — they never touch git.
 </div>
 
-<div class="decision open">
-  <div class="decision-label">Open</div>
-  <b>Domain plugin owners:</b> <code>copywriting</code>, <code>creative-strategy</code>, <code>media-buying</code> need owners assigned. Zak is confirming names.
+<div class="decision">
+  <div class="decision-label">Resolved</div>
+  <b>Domain plugin owners:</b> <code>creative-strategy</code> → Kat Prefontaine. <code>clickup-operations</code> → Spencer. <code>copywriting</code> and <code>media-buying</code> still need owners assigned — DM Zak if you'd like to take one.
 </div>
 
 <h2>Flow A — Installing skills (teammate wants to use something)</h2>

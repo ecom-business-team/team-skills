@@ -23,7 +23,8 @@ Solve the "how does the team share work across Claude Code" problem without inve
 | `plugins/general/` | Skills recommended for everyone (`new-workflow`, `onboard`, `team-skills-add`, `team-skills-browse`, `team-skills-update`) | Living |
 | `plugins/team-build-kit/` | The `/memo -> /prd -> /build -> /ship` lifecycle | Living |
 | `plugins/copywriting/` | Copywriter skills — placeholder pending first contribution | Living |
-| `plugins/creative-strategy/` | Creative strategist skills — placeholder pending first contribution | Living |
+| `plugins/creative-strategy/` | Creative strategist skills — brief-iteration, strategic-breakdown, hemingway-check (Kat Prefontaine) | Living |
+| `plugins/clickup-operations/` | Shared ClickUp workspace skills — new-ad-idea, brief-template, top-lp (Spencer) | Living |
 | `plugins/media-buying/` | Media buyer skills — placeholder pending first contribution | Living |
 
 ## How to find X
@@ -44,7 +45,8 @@ Solve the "how does the team share work across Claude Code" problem without inve
 | `general` | Zachary Blake | Live |
 | `team-build-kit` | Zachary Blake | Live |
 | `copywriting` | TBD | Placeholder |
-| `creative-strategy` | TBD | Placeholder |
+| `creative-strategy` | Kat Prefontaine | Live |
+| `clickup-operations` | Spencer | Live |
 | `media-buying` | TBD | Placeholder |
 
 ## Governance

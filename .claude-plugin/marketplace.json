@@ -33,7 +33,14 @@
     {
       "name": "creative-strategy",
       "source": "./plugins/creative-strategy",
-      "description": "Skills for creative strategists. (Placeholder - awaiting first contribution.)",
+      "description": "Skills for creative strategists: brief-iteration, strategic-breakdown, hemingway-check. Owner: Kat Prefontaine.",
+      "version": "0.1.0",
+      "category": "domain"
+    },
+    {
+      "name": "clickup-operations",
+      "source": "./plugins/clickup-operations",
+      "description": "Skills for operating the team's shared ClickUp workspace (Ads Board, Client Catalogs, brief workflows): new-ad-idea, brief-template, top-lp. Owner: Spencer.",
       "version": "0.1.0",
       "category": "domain"
     },

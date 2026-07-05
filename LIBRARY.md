@@ -18,10 +18,7 @@ ecom-business-team/team-skills
 │   ├── /onboard
 │   ├── /team-skills-add
 │   ├── /team-skills-browse
-│   ├── /team-skills-update
-│   ├── /new-ad-idea         (parked — pending clickup-operations plugin)
-│   ├── /brief-template      (parked — pending clickup-operations plugin)
-│   └── /top-lp              (parked — pending clickup-operations plugin)
+│   └── /team-skills-update
 │
 ├── team-build-kit          (everyone) — Zachary Blake
 │   ├── /new-workspace
@@ -34,10 +31,15 @@ ecom-business-team/team-skills
 ├── copywriting             (copywriters) — owner TBD
 │   └── (empty — awaiting first contribution)
 │
-├── creative-strategy       (strategists) — owner TBD
+├── creative-strategy       (strategists) — Kat Prefontaine
 │   ├── /brief-iteration
 │   ├── /strategic-breakdown
 │   └── /hemingway-check
+│
+├── clickup-operations      (shared ClickUp workspace) — Spencer
+│   ├── /new-ad-idea
+│   ├── /brief-template
+│   └── /top-lp
 │
 └── media-buying            (buyers) — owner TBD
     └── (empty — awaiting first contribution)
@@ -58,14 +60,6 @@ ecom-business-team/team-skills
 | `/team-skills-add` | Submit a skill from your local `~/.claude/skills/` to this marketplace. Runs the quality checklist, forks + branches + commits + opens a PR on your behalf. You never touch git. |
 | `/team-skills-browse` | Browse and install skills from this marketplace. Copies chosen skills directly into `~/.claude/skills/` — works in VSCode, terminal, any surface. |
 | `/team-skills-update` | Refresh every team-skill you have installed to the latest version. Only touches skills that came from the marketplace; leaves your personal skills alone. |
-
-> **⚠️ Parked here pending a `clickup-operations` plugin.** The three skills below are ClickUp Ads Board workflows scoped to the shared team workspace — they are *not* general-purpose and should not be installed by everyone. They live in `general` only because no `clickup-operations` plugin exists yet. **Request to the marketplace owner:** please create a `clickup-operations` plugin so these can move to their proper home.
->
-> | Command | What it does |
-> |---|---|
-> | `/new-ad-idea` | Interview-driven creation of a new ad idea task on the ClickUp Ads Board — walks Client → Product → Concept → Type → Desire → Sub Avatar → Angle → Awareness → Format → breakthrough memo, then builds the task with all fields set. |
-> | `/brief-template` | Adds a client's blank brief template (pulled live from their ClickUp Client Catalog) to Ads Board tasks that lack one. Scaffold only — does not pair copy or LP links. |
-> | `/top-lp` | Adds the top control landing page to active briefs that have a template but a blank `Links to:` line, matched per product/region from the Client Catalog. LP only — never copy. |
 
 ---
 
@@ -94,13 +88,26 @@ ecom-business-team/team-skills
 
 ## `creative-strategy` — for creative strategists
 
-**Owner:** TBD
+**Owner:** Kat Prefontaine
 
 | Command | What it does |
 |---|---|
 | `/brief-iteration` | Adapt a top-performing ad script to a new format/trend. Outputs hook options, hold, and CTA. Use when iterating a winning batch into a new creative format. |
 | `/strategic-breakdown` | Full psychological breakdown of a brief or script using the Elite Video Ad framework — Schwartz awareness, belief ladder, identity, curiosity gaps. Use for weekly QA and reverse-engineering winners. |
 | `/hemingway-check` | Hemingway-style readability check on scripts or copy — flags hard sentences, passive voice, adverbs, and weak qualifiers; targets Grade 6. Use before finalizing any script or hook. |
+
+---
+
+## `clickup-operations` — for the shared ClickUp workspace
+
+**Owner:** Spencer
+**Scope note:** these skills carry baked-in shared-workspace IDs (ClickUp list IDs, Client Catalog doc IDs). The whole team uses the same workspace, so this is intentional. Each skill ships a `SETUP.md` documenting the client → catalog mapping.
+
+| Command | What it does |
+|---|---|
+| `/new-ad-idea` | Interview-driven creation of a new ad idea task on the ClickUp Ads Board — walks Client → Product → Concept → Type → Desire → Sub Avatar → Angle → Awareness → Format → breakthrough memo, then builds the task with all fields set. |
+| `/brief-template` | Adds a client's blank brief template (pulled live from their ClickUp Client Catalog) to Ads Board tasks that lack one. Scaffold only — does not pair copy or LP links. |
+| `/top-lp` | Adds the top control landing page to active briefs that have a template but a blank `Links to:` line, matched per product/region from the Client Catalog. LP only — never copy. |
 
 ---
 
