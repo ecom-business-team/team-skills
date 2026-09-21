@@ -26,7 +26,11 @@ ecom-business-team/team-skills
 │   ├── /prd
 │   ├── /build
 │   ├── /ship
-│   └── /quick-fix
+│   ├── /quick-fix
+│   ├── /session-close
+│   ├── /day
+│   ├── /week
+│   └── /update-build-kit
 │
 ├── copywriting             (copywriters) — owner TBD
 │   └── (empty — awaiting first contribution)
@@ -76,6 +80,10 @@ ecom-business-team/team-skills
 | `/build` | The design is solid — implement it | (execution) |
 | `/ship` | It works — but others will rely on it, or it touches money or real data | **Gate 3 — safe to rely on?** |
 | `/quick-fix` | Something small broke or a tiny tweak — no ceremony needed | (below the gates) |
+| `/session-close` | You are ending a working session — writes the log entry, checks the living docs, runs the workspace's export check if it names one | (close) |
+| `/day` | End of day or next morning — turns the day's session logs into one digest and files the open threads | (ritual) |
+| `/week` | Once a week — reads the week's logs and digests, promotes what recurred, writes the weekly summary | (ritual) |
+| `/update-build-kit` | Refresh every kit file to the latest version — installs whatever the kit's `MANIFEST` lists | (maintenance) |
 
 ---
 

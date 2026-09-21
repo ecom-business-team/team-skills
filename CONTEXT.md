@@ -51,7 +51,7 @@ Solve the "how does the team share work across Claude Code" problem without inve
 
 ## Governance
 
-- **PR-only** — direct commits to `main` are blocked (except for Zak as org admin, for seeding)
+- **PR-only** — direct commits to `main` are blocked (except for Zak as org admin, for seeding, and the generated `team-build-kit` plugin)
 - **1 required approval** per PR
 - Plugin owners are the reviewers for PRs to their plugin
 - New plugins are proposed via PR (open against `general`, note the request in the description)
@@ -79,16 +79,9 @@ Points down (sub-areas):
 
 Points up (cross-workspace):
 - Root [CLAUDE.md](../CLAUDE.md) routing table (this system is registered there)
-- **`zjamesblake/team-build-kit` (public repo) is the source of truth for team-build-kit skill content.** It stays public because YouTube videos link to it. The workspace-root `team-build-kit/` folder is its working copy. `plugins/team-build-kit/skills/` in this marketplace is a **downstream mirror** for team distribution — after editing skills in the public repo, propagate here with:
-
-  ```bash
-  rsync -a --delete ~/Desktop/ClaudeCode/team-build-kit/.skills/{build,memo,prd,ship,quick-fix,new-workspace}/ \
-    ~/Desktop/ClaudeCode/team-skills/plugins/team-build-kit/skills/
-  ```
-
-  Then commit + push the marketplace. Do **not** edit `plugins/team-build-kit/skills/` directly — changes there won't reach the public repo.
+- **`zjamesblake/team-build-kit` (public repo) is the source of truth for team-build-kit skill content.** It stays public because YouTube videos link to it. The workspace-root `team-build-kit/` folder is its working copy. `plugins/team-build-kit/` in this marketplace is **generated**: on every promotion, the workspace's `.claude/tools/kit_promote.py --apply` copies every folder under the kit's `.skills/` (including `_shared/` and `update-build-kit/`) into `plugins/team-build-kit/skills/`, sets `plugin.json` and this marketplace's `team-build-kit` entry to the kit's version, commits, and pushes to `main` under the admin exception above. Do **not** edit `plugins/team-build-kit/` by hand — the next promotion overwrites it, and changes there never reach the public repo. What the kit ships is listed in its `MANIFEST`.
 
 ## Don't Load (for this system)
 
-- `ad-bounty/`, `northstar/`, `ad-analysis/`, `personal-os/` — unrelated systems
+- `ad-bounty/`, `northstar/`, `ad-analysis/` — unrelated systems
 - The workspace's own `~/.claude/skills/` — Zak's local skills. Only relevant if the current task is publishing one of them into the marketplace.
