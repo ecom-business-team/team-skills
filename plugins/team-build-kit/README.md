@@ -17,4 +17,4 @@ The three-gate build lifecycle for building tools you can trust — without bein
 
 **The idea:** *complexity is the enemy. If you can't explain it simply, it's probably too complicated.*
 
-Install with `/plugins install team-build-kit`.
+Install with `/team-skills-browse` in Claude Code and pick **team-build-kit** — it copies the skills into `~/.claude/skills/` and works in the VSCode extension, the terminal, and any other surface (no `/plugins` command needed). First time? See the marketplace [README](../../README.md) for the one-paste bootstrap.
