@@ -20,7 +20,7 @@
       "name": "team-build-kit",
       "source": "./plugins/team-build-kit",
       "description": "The three-gate build lifecycle: memo (why) -> prd (what) -> build (how) -> ship (safe to rely on). For building tools you trust without being an engineer.",
-      "version": "2026.9.21",
+      "version": "2026.9.21-2",
       "category": "general"
     },
     {
